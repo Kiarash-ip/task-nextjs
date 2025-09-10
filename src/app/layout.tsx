@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body className={`${vazirmatn.variable} antialiased`}>{children}</body>
     </html>
   );
