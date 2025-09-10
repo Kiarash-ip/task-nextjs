@@ -24,7 +24,7 @@ export default function ProfileCard({
     <Card dir="ltr">
       <CardContent className="space-y-3 text-sm">
         {picture ? (
-          <Image
+          <img
             src={picture}
             alt={name ? `Profile picture of ${name}` : "Profile Picture"}
             width={334}
