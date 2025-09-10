@@ -26,7 +26,7 @@ export default function ProfileCard({
         {picture ? (
           <Image
             src={picture}
-            alt="Profile Picture"
+            alt={name ? `Profile picture of ${name}` : "Profile Picture"}
             width={334}
             height={334}
             className="object-cover rounded-md"
@@ -35,13 +35,21 @@ export default function ProfileCard({
           <Skeleton className="size-[334px] rounded-md" />
         )}
         <div className="flex items-center gap-2 px-1">
-          <User size={18} className="text-neutral-700" />
-          {name ? <p>{name}</p> : <Skeleton className="h-5 w-28 rounded-md" />}
+          <User size={18} className="text-card-foreground" aria-hidden="true" />
+          {name ? (
+            <span>{name}</span>
+          ) : (
+            <Skeleton className="h-5 w-28 rounded-md" />
+          )}
         </div>
         <div className="flex items-center gap-2 px-1">
-          <AtSign size={18} className="text-neutral-700" />
+          <AtSign
+            size={18}
+            className="text-card-foreground"
+            aria-hidden="true"
+          />
           {email ? (
-            <p>{email}</p>
+            <span>{email}</span>
           ) : (
             <Skeleton className="h-5 w-32 rounded-md" />
           )}

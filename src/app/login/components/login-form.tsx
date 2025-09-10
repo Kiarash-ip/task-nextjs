@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -99,14 +98,19 @@ export function LoginForm() {
               name="phone_number"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>شماره همراه</FormLabel>
+                  <FormLabel htmlFor="phone_number_input">
+                    شماره همراه
+                  </FormLabel>
                   <FormControl>
                     <Input
+                      id="phone_number_input"
                       placeholder="شماره همراه خود را وارد کنید"
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <div aria-live="polite">
+                    <FormMessage />
+                  </div>
                 </FormItem>
               )}
             />
@@ -114,6 +118,7 @@ export function LoginForm() {
               type="submit"
               className="w-full cursor-pointer"
               disabled={isPending}
+              aria-busy={isPending}
             >
               {isPending && <Spinner className="w-5 h-5" />}
               ورود

@@ -3,6 +3,9 @@ import { Vazirmatn } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 
 import "./globals.css";
+import { ThemeProvider } from "@/providers/theme-provider";
+import { ModeToggle } from "@/components/shared/toggle-dark-mode";
+import { cn } from "@/lib/utils";
 
 const vazirmatn = Vazirmatn({
   variable: "--font-vazirmatn",
@@ -22,11 +25,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${vazirmatn.variable} antialiased`}>
-        <main className="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-          {children}
-        </main>
-        <Toaster />
+      <body
+        className={cn(
+          vazirmatn.variable,
+          "antialiased min-h-svh flex flex-col"
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="container mx-auto p-4">
+            <ModeToggle />
+          </header>
+          <main className="bg-background grow flex flex-col items-center justify-center gap-6 p-6 pt-0 md:pt-0 md:p-10">
+            {children}
+          </main>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

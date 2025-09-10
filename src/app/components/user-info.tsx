@@ -41,15 +41,16 @@ export default function UserInfo() {
   };
 
   return (
-    <div>
+    <section aria-label="User Profile">
       <ProfileCard name={data.name} email={data.email} picture={data.picture} />
       <Button
         onClick={logout}
         variant="destructive"
         className="mt-4 cursor-pointer"
+        aria-label="خروج از حساب کاربری"
       >
         خروج
       </Button>
-    </div>
+    </section>
   );
 }
