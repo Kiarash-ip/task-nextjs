@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# task-nextjs
 
-## Getting Started
+A Next.js 15 project using TypeScript, Tailwind CSS, and modern UI libraries.
 
-First, run the development server:
+## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or newer recommended)
+- npm (v9 or newer recommended)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Install dependencies:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **Development server:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Build for production:**
 
-## Deploy on Vercel
+   ```bash
+   npm run build
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Start production server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm start
+   ```
+
+5. **Lint your code:**
+
+   ```bash
+   npm run lint
+   ```
+
+## Project Structure
+
+- `src/` — Main application code (pages, components, styles, etc.)
+- `public/` — Static assets
+- `package.json` — Project metadata and scripts
+- `tsconfig.json` — TypeScript configuration
+- `postcss.config.mjs` — PostCSS/Tailwind CSS config
+
+## Features
+
+- Next.js 15 (App Router)
+- TypeScript
+- Tailwind CSS
+- React Hook Form, Zod, Lucide Icons, next-themes, and more
+
+## Deployment
+
+You can deploy this app to Vercel or any Node.js hosting provider.
