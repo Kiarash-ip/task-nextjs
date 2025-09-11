@@ -24,12 +24,13 @@ export default function ProfileCard({
     <Card dir="ltr">
       <CardContent className="space-y-3 text-sm">
         {picture ? (
-          <img
+          <Image
             src={picture}
             alt={name ? `Profile picture of ${name}` : "Profile Picture"}
             width={334}
             height={334}
             className="object-cover rounded-md"
+            unoptimized={true}
           />
         ) : (
           <Skeleton className="size-[334px] rounded-md" />
